@@ -1,1 +1,25 @@
-10/12/17 - JLU - Added Abstract documents
+Change Log:
+======================================================================================
+
+John:
+
+	10/30/17 - JLU - Completed initial work on the following items:
+					MainGUI design
+					Main menus
+					Menu event handlers are present, but devoid of much action.
+	
+	10/31/17 - JLU - Completed initial work on the following items:
+					Document List panel
+					Document Statistic panel
+					Document Reader panel
+					Moved JFrame to undecorated and setup DragListener.
+					Setup font size change framework for document reading panel (look @ this with Matthias, there's got to be a better way).
+					Setup time capture for document statistics (Today's Training Time, Current WPM, Fastest WPM Today).
+					
+TBD:
+	~Add all Keyboard Event Listeners
+	~Setup minimize, maximize, exit buttons on the title bar
+	~setup some sort of prototype transparent z overlay
+	~(Talk w/ Matthias) Since textArea auto-resizes on font size change, and undecorated JFrame doesn't, need to find a good way to dynamically resize textArea.  Currently empirically setting rows/cols.
+	~Finish document based stats collection
+=====================================================================================	

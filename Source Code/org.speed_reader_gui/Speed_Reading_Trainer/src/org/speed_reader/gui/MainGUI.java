@@ -1,41 +1,45 @@
 package org.speed_reader.gui;
 
-import java.io.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.event.MouseInputAdapter;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.awt.geom.RoundRectangle2D;
-//import org.third_party.software.ComponentMover;
-
-
+import static java.time.temporal.ChronoUnit.MINUTES;
 
 public class MainGUI extends JFrame {
 	
-	//Styling Global Vars
-	int WINDOW_WIDTH = 1523; 
+//Styling Global Vars
+/*------------------------------------------------------------------------------------------------------------------------------------*/	
+	int WINDOW_WIDTH = 1000; 
 	int WINDOW_HEIGHT = 900;
-	
-	
-	
 	Color defaultBackgroundColor = new Color(24,145,227);  	//rgb - light blue color
 	Color defaultTextColor = new Color(90,90,95);       	//rgb - gray
 	int defaultFontSize = 12;
 	int emphasisFontSize = 18;
-	public int numReadingRows = 50;							//Number of Rows in the Reading Pane (char tall)
-	public int numReadingCols = 100;						//Number of Cols in the Reading Pane (char wide)
+/*------------------------------------------------------------------------------------------------------------------------------------*/	
+//Provides for dynamic font sizing of reading
 	
+	public int readingFontSize = 22;													//User definable font size for the reading
+	
+	//Empirical Reading Panel tuning parameters based on window_height -- until I find a better way.
+	public int numReadingRows = (int)(WINDOW_HEIGHT/18*(12/readingFontSize));			//Number of Rows in the Reading Pane (char tall)
+	public int numReadingCols = (int)(WINDOW_WIDTH/13*(1.05*12/readingFontSize));			//Number of Cols in the Reading Pane (char wide)
+/*------------------------------------------------------------------------------------------------------------------------------------*/	
+//User & Document variables
 	public String userName = "Maria";
+	public LocalDateTime startTime = LocalDateTime.now(); // current time
+	public int currWPM = 30;
+	public int fastestWPMToday;
 	
 	ArrayList<String> documents = new ArrayList<String>();
-	
+/*------------------------------------------------------------------------------------------------------------------------------------*/	
+//SWING GUI Global Objs
 	private static final long serialVersionUID = 1L;
-	
-	//SWING GUI Global Objs
 	JFrame mainFrame;
 	DocumentListPanel docListPanel;
 		//Globally accessible JList in docListPanel
@@ -48,6 +52,7 @@ public class MainGUI extends JFrame {
 	
 	DocumentStatisticsPanel docStatsPanel;
 	JTextArea textArea;								//document display panel
+/*------------------------------------------------------------------------------------------------------------------------------------*/	
 				
 	
 	MainGUI(){
@@ -69,6 +74,7 @@ public class MainGUI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setUndecorated(true);
 		setShape(new RoundRectangle2D.Double(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, 10, 10));
+		getRootPane().setWindowDecorationStyle(JRootPane.FRAME);
 
 
 		
@@ -78,7 +84,6 @@ public class MainGUI extends JFrame {
 		buildMainFrame();
 		
 		//Set JFrame to be moveable
-		
 		DragListener drag = new DragListener();
 		addMouseListener( drag );
 		addMouseMotionListener( drag );
@@ -131,15 +136,16 @@ public class MainGUI extends JFrame {
 
 		private static final long serialVersionUID = 1L;
 		
-		int currWPM = 30;
+		
 
 		CenterPanel(){
 			
 			int width=(int)(WINDOW_WIDTH*.75);
-			int height=WINDOW_HEIGHT;
+			int height=(int)(WINDOW_HEIGHT*.9);
 			
 			setLayout(new BorderLayout());
-			setSize(width,height);
+			this.setSize(width,height);
+			this.setMaximumSize(new Dimension(width, (int)height));
 			setBackground(defaultBackgroundColor);
 			//setBorder(BorderFactory.createMatteBorder(0, 0, 4, 0, defaultBackgroundColor));
 			
@@ -165,6 +171,7 @@ public class MainGUI extends JFrame {
 			Border margin = new EmptyBorder(0,10,0,10);
 			textAreaScrollPane.setBorder(new CompoundBorder(border, margin));
 			
+			
 			//populate the textArea
 			
 			//DEBUG ONLY:
@@ -173,7 +180,7 @@ public class MainGUI extends JFrame {
 					"\r\n\r\nCras convallis magna nec cursus tempor. Etiam purus felis, imperdiet at fermentum vel, eleifend vitae velit. Vestibulum vitae euismod ipsum. Quisque fermentum tortor purus, et sollicitudin quam sollicitudin eu. Aenean tincidunt eros eget orci vulputate, vel posuere felis finibus. Donec facilisis, erat auctor semper molestie, tellus lorem molestie massa, quis porta justo orci et orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum in magna tempor, efficitur enim id, porttitor magna.\r\n" + 
 					"Nam feugiat pellentesque nisi nec vulputate. Ut cursus urna at lectus mattis, vitae finibus ipsum fringilla. Nullam a pulvinar mauris. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum et dolor commodo nulla lobortis scelerisque. Curabitur hendrerit erat elit, ut fringilla justo elementum id. Etiam eu turpis quis odio dapibus blandit. Ut nunc arcu, dapibus eget consequat varius, suscipit porta leo. Duis at rhoncus nisl. Aenean placerat congue iaculis.\r\n" + 
 					"Vivamus cursus varius convallis. Fusce nec nulla augue. Donec gravida ultricies consectetur. Nullam luctus luctus urna ut vulputate. Etiam cursus lacinia mi, vel euismod lectus. Fusce non mattis augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut diam mauris, porttitor id fermentum non, ultricies sit amet lorem. Nulla odio purus, varius et tincidunt vel, gravida id nulla." + 
-					"\r\n\r\nSuspendisse potenti. Duis eget suscipit metus. In quis elementum metus. Integer ac efficitur ligula. Morbi vel libero erat. Aliquam rhoncus ipsum leo, sollicitudin facilisis turpis viverra in. Phasellus ut placerat libero. Mauris vel turpis in nibh faucibus vehicula. Aenean laoreet ultricies luctus. Aliquam pretium metus id tortor tincidunt, nec venenatis metus dignissim. In facilisis dapibus leo eget dignissim.\r\n" + 
+					"\r\n\r\nSuspendisse potenti. Duis eget suscipit metus. In quis elementum metus. Integer ac efficitur ligula. Morbi vel libero erat. Aliquam rhoncus ipsum leo, sollicitudin facilisis turpis viverra in. Phasellus ut placerat libero. Mauris vel turpis in nibh faucibus vehicula. Aenean laoreet ultricies luctus. Aliquam pretium metus id tortor tincidunt, nec venenatis metus dignissim. In facilisis dapibus leo eget dignissim.\r\n\r\n" + 
 					"Nulla luctus in nibh ac ullamcorper. Sed at sollicitudin odio. Sed convallis felis id imperdiet tristique. Integer dui odio, rutrum eu mattis nec, malesuada sit amet nibh. Nulla pellentesque massa vulputate ante dapibus, non euismod risus pretium. Nam ut fermentum nibh. Aenean faucibus urna eu semper egestas. Nullam id ligula nulla. Duis dignissim hendrerit urna malesuada accumsan. Pellentesque vel tellus euismod, aliquam tellus sed, laoreet justo. Nunc tempus nisi sed diam tristique varius. Aenean velit turpis, tristique ut est nec, ultricies efficitur ipsum. Ut suscipit efficitur ligula. Quisque scelerisque sem massa." + 
 					"Sed tempor metus metus, eget efficitur neque luctus sit amet. Donec iaculis dui tellus, ac mollis arcu aliquet in. Nam euismod sagittis ultrices. Suspendisse tempus sem velit. Donec placerat auctor nunc, rhoncus feugiat augue ornare eget. Mauris interdum ultrices nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut laoreet dui eu risus ultricies accumsan. Aliquam at massa pellentesque, accumsan erat condimentum, sollicitudin nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque id magna suscipit, tempor dolor nec, bibendum urna. Duis nec malesuada metus, sit amet tincidunt dolor. Aenean dapibus, nulla et accumsan dapibus, enim lacus viverra nisl, nec consequat libero quam vel lectus. Aliquam ullamcorper sem ac lectus luctus, quis cursus lectus auctor." + 
 					"Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi cursus, velit ut faucibus dignissim, elit urna eleifend ipsum, eget imperdiet lorem arcu quis mi. Vestibulum non posuere urna. Pellentesque sagittis gravida dolor, nec tincidunt dui finibus sed. Duis sit amet est id tortor convallis pharetra in et mi. Donec blandit finibus diam quis feugiat. Ut accumsan mattis tortor in tristique. Integer rutrum sagittis arcu, condimentum congue arcu malesuada et. Vivamus vestibulum ullamcorper ipsum, at facilisis enim interdum quis. Praesent varius, turpis eget imperdiet scelerisque, nibh justo tristique ligula, id tempus tellus libero at dui. Duis dictum ante augue, id iaculis tellus molestie vitae. Morbi a velit nisi." + 
@@ -191,6 +198,7 @@ public class MainGUI extends JFrame {
 			
 			
 			textArea.append(loremIpsumString);
+			textArea.setFont(new Font("Times New Roman", Font.PLAIN, readingFontSize));
 			
 			add(textAreaScrollPane,BorderLayout.WEST);
 		}
@@ -202,15 +210,14 @@ public class MainGUI extends JFrame {
 
 		SouthPanel(){
 			setLayout(new FlowLayout());
-			setSize(WINDOW_WIDTH,(int)(WINDOW_HEIGHT*.1));
 			setBackground(Color.WHITE);
 			setBorder(BorderFactory.createMatteBorder(2, 0, 0, 0, defaultBackgroundColor));
 			
 			JLabel southLabel = new JLabel("<html><p><font size=4>To <i>Decrease</i> or <i>Increase</i> Reading Speed, "+
 											"Press <font size=6>&lsaquo<font size=4> or <font size=6>&rsaquo<font size=4>.  "+
-											"Press Spacebar to <i>Pause</i>.</p></html>");
+											"Press Spacebar to <i>Pause</i>.</p></html>", SwingConstants.CENTER);
 			southLabel.setForeground(defaultTextColor);
-			
+			southLabel.setMaximumSize(new Dimension(WINDOW_WIDTH-400,(int)(WINDOW_HEIGHT*.1)));
 			add(southLabel);
 		}
 		
@@ -436,13 +443,20 @@ public class MainGUI extends JFrame {
 		int width = (int)(WINDOW_WIDTH*.25);   //20% wide, 60% high
 		int height = (int)(WINDOW_HEIGHT*.2);
 		
+		LocalDateTime currTime;
 		int currTrainingTimeMin;
 		int longestTrainingTimeMin;
-		int currentWPM;
-		int fastestWPMToday;
 		int fastestWPM;
 		
 		DocumentStatisticsPanel() {
+			
+			//Collect Current Statistics
+			currTime = LocalDateTime.now();
+			currTime =  LocalDateTime.now().plusMinutes(4); 					//DEBUG ONLY
+			currTrainingTimeMin = (int)startTime.until(currTime, MINUTES);
+
+			if (fastestWPMToday <= currWPM) fastestWPMToday = currWPM;
+			System.out.println("DEBUG ONLY: TBD - Stats collection for Longest Training Time, Fastest WPM (These come from document obj)");
 			
 			//Panel Styling Elements
 			setLayout(new BorderLayout());
@@ -476,7 +490,7 @@ public class MainGUI extends JFrame {
 			
 			String valueContents="<html><p>"+currTrainingTimeMin+" m<br>"+
 											longestTrainingTimeMin+" m<br>"+
-											currentWPM+" WPM<br>"+
+											currWPM+" WPM<br>"+
 											fastestWPMToday+" WPM<br>"+
 											fastestWPM+" WPM</p></html>";
 			
