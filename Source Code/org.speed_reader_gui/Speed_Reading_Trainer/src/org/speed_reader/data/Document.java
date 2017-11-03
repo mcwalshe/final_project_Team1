@@ -16,36 +16,57 @@ public class Document implements Serializable {
 		
 		//no arg constructor
 		public Document() {
-			this.title = "";
-			this.fileLoc = "";
-			this.wordCount = 0;
-			this.textBody = "";
-			this.currWord = "";
+			this.setTitle("");
+			this.setPath("");
+			this.setWordCount(0);
+			this.setTextBody("");
+			this.setCurrWord("");
 		}
 		
 		//constructor with file path as argument?
-		
+		//TODO: open file from path and use that to fill out the constructor
 		public Document(String path) {
-			this.title = "";
-			this.fileLoc = path;
-			this.wordCount = 0;
-			this.textBody = "";
-			this.currWord = "";
+			
+			this.setTitle("");
+			this.setPath(path);
+			this.setWordCount(0);
+			this.setTextBody("");
+			this.setCurrWord("");
 		}
 		
 		public void incrementWord() {
 			
 		}
 		
+		//saves Document to serialized file
+		public static void saveDocument(Document d) {
+			FileOutputStream fileOut = null;
+			ObjectOutputStream objOut= null;
+
+			try 
+			{
+				fileOut = new FileOutputStream(d.getPath());
+				objOut = new ObjectOutputStream(fileOut);
+				objOut.writeObject(d);
+				objOut.close();
+				fileOut.close();
+		     }	
+			
+			catch(IOException i)
+		    {
+				i.printStackTrace();
+		    }
+		}
+		
 		//loads document from serialized file
-		public static Document loadDocument() {
+		public static Document loadDocument(String docPath) {
 			FileInputStream fileIn = null;
 			ObjectInputStream objIn = null;
 			Document d = null;
 				
 			try
 			{
-				fileIn = new FileInputStream(".ser");
+				fileIn = new FileInputStream(docPath);
 				objIn = new ObjectInputStream(fileIn);
 				d = (Document) objIn.readObject();
 				objIn.close();
@@ -60,6 +81,48 @@ public class Document implements Serializable {
 				e.printStackTrace();
 			}  
 			return d;
+		}
+		
+		//Getters and Setters
+
+		public String getTitle() {
+			return title;
+		}
+
+		public void setTitle(String title) {
+			this.title = title;
+		}
+
+		public String getPath() {
+			return fileLoc;
+		}
+
+		public void setPath(String fileLoc) {
+			this.fileLoc = fileLoc;
+		}
+
+		public int getWordCount() {
+			return wordCount;
+		}
+
+		public void setWordCount(int wordCount) {
+			this.wordCount = wordCount;
+		}
+
+		public String getTextBody() {
+			return textBody;
+		}
+
+		public void setTextBody(String textBody) {
+			this.textBody = textBody;
+		}
+
+		public String getCurrWord() {
+			return currWord;
+		}
+
+		public void setCurrWord(String currWord) {
+			this.currWord = currWord;
 		}
 }
 
