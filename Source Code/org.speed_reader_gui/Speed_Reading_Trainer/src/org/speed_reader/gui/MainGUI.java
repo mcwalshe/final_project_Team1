@@ -110,8 +110,19 @@ public class MainGUI extends JFrame {
 		pack();
 		setVisible(true);
 		
-		
 	}
+	
+	public void updateDocList(){
+		docListPanel.debugTestRepaint();
+		docListPanel.revalidate();
+		docListPanel.repaint();
+	}
+	
+	public void updateStats(){
+		docStatsPanel.revalidate();
+		docStatsPanel.repaint();
+	}
+	
 	public class DragListener extends MouseInputAdapter
 	{
 	    Point location;
@@ -380,6 +391,13 @@ public class MainGUI extends JFrame {
 		private static final long serialVersionUID = 1L;
 		int width = (int)(WINDOW_WIDTH*.25);   //25% wide, 60% high
 		int height = (int)(WINDOW_HEIGHT*.7);
+		
+		// DEBUG ONLY: Test repaint() functionality.
+		private int debugTestIteration = 0;
+		public void debugTestRepaint(){
+			model.addElement("Test " + debugTestIteration++);
+			docList.setModel(model);
+		}
 		
 		DocumentListPanel(String title){
 			super();

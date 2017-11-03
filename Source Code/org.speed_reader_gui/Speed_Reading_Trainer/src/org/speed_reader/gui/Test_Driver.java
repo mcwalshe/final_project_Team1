@@ -14,6 +14,16 @@ public class Test_Driver {
 		
 		// Instantiate GUI
 		MainGUI newGUI;
-	    newGUI = new MainGUI();
+		newGUI = new MainGUI();
+		
+		// Test repainting
+		for(int i = 0; i < 10; i++){
+			try {
+				Thread.sleep(2000);
+			} catch(InterruptedException e){
+				e.printStackTrace();
+			}
+			newGUI.updateDocList();
+		}
 	}
 }
