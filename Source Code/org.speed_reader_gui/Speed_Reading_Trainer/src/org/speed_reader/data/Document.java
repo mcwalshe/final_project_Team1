@@ -1,11 +1,15 @@
 package org.speed_reader.data;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.Scanner;
+
 
 public class Document implements Serializable {
 		private String title;
@@ -26,16 +30,58 @@ public class Document implements Serializable {
 		//constructor with file path as argument?
 		//TODO: open file from path and use that to fill out the constructor
 		public Document(String path) {
+			//first check for .txt extension, then open file
+			String checkTxt = path.substring(path.lastIndexOf('.'));
 			
-			this.setTitle("");
-			this.setPath(path);
-			this.setWordCount(0);
-			this.setTextBody("");
-			this.setCurrWord("");
+			if (checkTxt.compareTo(".txt") != 0) 
+			{
+				//we only use .txt files, so a document will not be created
+				System.out.println("Error: Invalid document type. Only text files are allowed.");
+			} 
+			else 
+			{
+				//set title and path, init text body and word count
+				int lastSlash = path.lastIndexOf('\\');
+				if (lastSlash == -1) {
+					this.title = path.substring(0, path.lastIndexOf('.'));
+				} else {
+					this.title = path.substring(path.lastIndexOf('\\') + 1, path.lastIndexOf('.'));
+				}
+				this.setPath(path);
+				this.textBody = "";
+				this.wordCount = 0;
+				
+				File doc = new File(path);
+				Scanner docReader;
+				try {
+					docReader = new Scanner(doc);
+					//read text from file
+					while ( docReader.hasNext() ) {
+						this.textBody += docReader.nextLine();
+					}
+					docReader.close();
+					//evaluate number of words
+	 				String[] words = this.textBody.split(" ");
+	 				this.currWord = words[0];
+	 				for (String s: words) {
+	 					this.wordCount +=1;
+	 				}
+				} 
+				catch (FileNotFoundException e) 
+				{
+					e.printStackTrace();
+				}
+			}
 		}
 		
 		public void incrementWord() {
-			
+			String[] words = this.textBody.split(" ");
+			for (int i = 0; i < words.length; i++) {
+				if (this.currWord.compareTo(words[i]) == 0) {
+					this.currWord = words[i+1];
+					break;
+				}
+			}
 		}
 		
 		//saves Document to serialized file
@@ -45,7 +91,7 @@ public class Document implements Serializable {
 
 			try 
 			{
-				fileOut = new FileOutputStream(d.getPath());
+				fileOut = new FileOutputStream(d.getPath() + ".ser");
 				objOut = new ObjectOutputStream(fileOut);
 				objOut.writeObject(d);
 				objOut.close();
