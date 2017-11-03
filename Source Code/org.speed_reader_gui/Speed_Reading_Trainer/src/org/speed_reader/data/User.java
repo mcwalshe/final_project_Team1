@@ -1,11 +1,14 @@
 package org.speed_reader.data;
 
+import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
-public class User {
+public class User implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	private String name;
 	private ArrayList<Document> docList;
@@ -82,8 +85,14 @@ public class User {
 		return true;
 	}
 	
-	public static String hashString(String str) throws NoSuchAlgorithmException{
-		MessageDigest md = MessageDigest.getInstance("SHA-256");
+	public static String hashString(String str){
+		MessageDigest md;
+		try {
+			md = MessageDigest.getInstance("SHA-256");
+		} catch(NoSuchAlgorithmException e){
+			e.printStackTrace();
+			return null;
+		}
 		md.update(str.getBytes(StandardCharsets.UTF_8));
 		byte[] bytes = md.digest();
 		char[] hash = new char[bytes.length];
@@ -95,15 +104,43 @@ public class User {
 	
 	public boolean setPassword(String password){
 		if(validatePassword(password)){
-			try {
-				passwordHash = hashString(password);
-			} catch(NoSuchAlgorithmException e){
-				e.printStackTrace();
-				return false; // Exception in hashing function.
-			}
+			passwordHash = hashString(password);
 			return true; // Password accepted and recorded as hash.
 		} else {
 			return false; // Password rejected.
 		}
 	}
+	
+	public boolean checkPassword(String password){
+		if(hashString(password) == passwordHash){
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public int getCurrWPM(){
+		return currWPM;
+	}
+	
+	public void setCurrWPM(int currWPM){
+		this.currWPM = currWPM;
+	}
+	
+	public int getRecordTrainingSec(){
+		return recordTrainingSec;
+	}
+	
+	public void setRecordTrainingSec(int recordTrainingSec){
+		this.recordTrainingSec = recordTrainingSec;
+	}
+	
+	public int getRecordWPM(){
+		return recordWPM;
+	}
+	
+	public void setRecordWPM(int recordWPM){
+		this.recordWPM = recordWPM;
+	}
+	
 }

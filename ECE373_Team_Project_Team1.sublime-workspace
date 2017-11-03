@@ -1002,6 +1002,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"workspace",
+			"project"
 		],
 		"highlight": true,
 		"in_selection": false,
