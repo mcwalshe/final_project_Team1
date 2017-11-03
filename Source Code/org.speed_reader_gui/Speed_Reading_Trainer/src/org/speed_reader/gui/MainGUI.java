@@ -457,6 +457,14 @@ public class MainGUI extends JFrame {
 
 			if (fastestWPMToday <= currWPM) fastestWPMToday = currWPM;
 			System.out.println("DEBUG ONLY: TBD - Stats collection for Longest Training Time, Fastest WPM (These come from document obj)");
+			System.out.println("                                   ^^^^^^^^^^^^^^^^^^^^^^^^^");
+			System.out.println("                                   If you said goodbye to me tonight,");
+			System.out.println("                                   There would still be music left to write.");
+			System.out.println("                                   What else could I do?");
+			System.out.println("                                   I'm so inspired by you.");
+			System.out.println("                                   That hasn't happened for the longest time.");
+			System.out.println("                                 --Billy Joel, \"The Longest Time\"");
+			System.out.println("                                   (Sorry.)");
 			
 			//Panel Styling Elements
 			setLayout(new BorderLayout());

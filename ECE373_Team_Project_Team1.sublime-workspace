@@ -1,0 +1,1125 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"DarkS",
+				"DarkSoulsAreaSchema"
+			],
+			[
+				"tab",
+				"tableOffer1"
+			],
+			[
+				"hyp",
+				"hyperparam"
+			],
+			[
+				"hy",
+				"hyperparam"
+			],
+			[
+				"voting",
+				"votingThreshold"
+			],
+			[
+				"hyper",
+				"hyperparameters"
+			],
+			[
+				"voc",
+				"vocabulary_"
+			],
+			[
+				"voca",
+				"vocabulary"
+			],
+			[
+				"embe",
+				"embeddingWords"
+			],
+			[
+				"WORD_",
+				"WORD_EMBED_DIM"
+			],
+			[
+				"hello_bye",
+				"hello_bye_t"
+			],
+			[
+				"_find",
+				"_find_metaSubstr"
+			],
+			[
+				"_build",
+				"_build_metaSubstr"
+			],
+			[
+				"subc",
+				"subconcat_st"
+			],
+			[
+				"SUB",
+				"SUBSTR_END"
+			],
+			[
+				"hello",
+				"hello_bye_st_t"
+			],
+			[
+				"substr",
+				"substr_st_t"
+			],
+			[
+				"str_",
+				"str_struct_t"
+			],
+			[
+				"Error_nega",
+				"Error_negative_start_index"
+			],
+			[
+				"isGrea",
+				"isGreaterEq"
+			],
+			[
+				"Gre",
+				"GreaterThan_EqualTo"
+			],
+			[
+				"num",
+				"numDropped"
+			],
+			[
+				"request",
+				"requestLogEntry"
+			],
+			[
+				"da",
+				"dataReceived"
+			],
+			[
+				"gen",
+				"generateRandomKey"
+			],
+			[
+				"lis",
+				"listenForGreeting"
+			],
+			[
+				"gener",
+				"generateRandomKey"
+			],
+			[
+				"PRO",
+				"PROCESS_CMD"
+			],
+			[
+				"wait",
+				"waitForBtnPress"
+			],
+			[
+				"upper_",
+				"upper_Sigma_0"
+			],
+			[
+				"WORDS_PER_",
+				"WORDS_PER_256_BITS"
+			],
+			[
+				"email",
+				"email_validation_regex"
+			],
+			[
+				"pass",
+				"password_validation_regex"
+			],
+			[
+				"inval",
+				"invalid_password"
+			],
+			[
+				"inv",
+				"invalid_password"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/CUDA C++/cuda-c++.sublime-build",
+					""
+				],
+				[
+					"Packages/CUDA C++/cuda-c++.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++ Build System.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++ Build System.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/User/CUDA Build System.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/C++ Build System.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/CUDA C++/cuda-c++.sublime-build",
+					""
+				],
+				[
+					"Packages/CUDA C++/cuda-c++.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++ Build System.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/User/CUDA Build System.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/C++ Build System.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++ Build System.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/C++ Build System.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				],
+				[
+					"Packages/User/C++ Build System.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++ Build System.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/User/CUDA Build System.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				],
+				[
+					"Packages/User/C++ Build System.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				],
+				[
+					"Packages/User/C++.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/Markdown Preview/Markdown.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++ Build System.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++ Build System.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/User/CUDA Build System.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Markdown Preview/Markdown.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/Markdown Preview/Markdown.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++ Build System.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Markdown Preview/Markdown.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++ Build System.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/User/CUDA Build System.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/CUDA Build System.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/User/CUDA Build System.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++11/C++11.sublime-build",
+					""
+				],
+				[
+					"Packages/C++11/C++11.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++11/C++11.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/C++ Starting Kit/C++ - Starting Kit.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++ Build System.sublime-build",
+					""
+				],
+				[
+					"Packages/User/C++ Build System.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++.sublime-build",
+					""
+				],
+				[
+					"Packages/User/CUDA Build System.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 784.0,
+		"last_filter": "package",
+		"selected_items":
+		[
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"prv:",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"package control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"build",
+				"Build With: Markdown"
+			],
+			[
+				"",
+				"Build With: C++ - Starting Kit"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"git",
+				"Build With: GitBash"
+			],
+			[
+				"run",
+				"Build With: C++ - Starting Kit - Run"
+			],
+			[
+				"c++",
+				"Build With: C++11 - Run"
+			],
+			[
+				"package control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"package control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"markdown preview: preview in browser",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"ma",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markd",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"package control: install package",
+				"Package Control: Install Package"
+			],
+			[
+				"latex",
+				"LaTeXTools: Jump to PDF"
+			]
+		],
+		"width": 856.0
+	},
+	"console":
+	{
+		"height": 471.0,
+		"history":
+		[
+			"ssh eldritch-horr.org",
+			"ssh -R ubuntu@eldritch-horr.org",
+			"ssh ubuntu@eldritch-horr.org",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/ece373/ECE373_Team_Project_Team1",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/ece373/ECE373_Team_Project_Team1/Source Code",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/ece373/ECE373_Team_Project_Team1/Source Code/org.speed_reader_gui",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/ece373/ECE373_Team_Project_Team1/Source Code/org.speed_reader_gui/Speed_Reading_Trainer",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/ece373/ECE373_Team_Project_Team1/Source Code/org.speed_reader_gui/Speed_Reading_Trainer/src",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/ece373/ECE373_Team_Project_Team1/Source Code/org.speed_reader_gui/Speed_Reading_Trainer/src/org",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/ece373/ECE373_Team_Project_Team1/Source Code/org.speed_reader_gui/Speed_Reading_Trainer/src/org/speed_reader",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/ece373/ECE373_Team_Project_Team1/Source Code/org.speed_reader_gui/Speed_Reading_Trainer/src/org/speed_reader/gui"
+	],
+	"file_history":
+	[
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/ece373/ECE373_Team_Project_Team1/.gitignore",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/ece373/ECE373_Team_Project_Team1/Source Code/org.speed_reader_gui/Speed_Reading_Trainer/src/org/speed_reader/data/User.java",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/subdom/darksouls/css/hiding-spots.css",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/subdom/darksouls/js/hiding-spots.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/subdom/darksouls/hiding-spots.html",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/subdom/darksouls/index.html",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/routes/darksouls.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/index.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/ece373/ECE373_Team_Project_Team1/Source Code/org.speed_reader_gui/Speed_Reading_Trainer/src/org/speed_reader/gui/MainGUI.java",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/local_modules/req-auth/index.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/local_modules/req-auth/client/req-auth.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/routes/index.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/subdom/darksouls/json/hiding-spots.json",
+		"/C/Users/matth/workspace/hw03_Guenther/src/org/university/software/Task1Results.txt",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/local_modules/static-init.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/main.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/app.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/local_modules/mongo-init.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/local_modules/mongodb-init.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/routes/users.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/local_modules/req-auth/req-auth-client.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/local_modules/req-auth/package.json",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/local_modules/req-auth/bower.json",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/vendor/jsSHA-2.3.1/src/sha256.js",
+		"/C/Users/matth/AppData/Local/Temp/Temp1_jsSHA-2.3.1.zip/jsSHA-2.3.1/README.md",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/local_modules/req-auth.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/local_modules/darksouls/auth.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/package.json",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/subdom/darksouls/css/main.css",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/.gitignore",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/duplex-stream.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/subdom/darksouls/css/stempel-garamond.css",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/public/extra-credit-1/car-finance.html",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/public/subdom/darksouls/hiding-spots.html",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/public/subdom/darksouls/json/hiding-spots.json",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/public/subdom/darksouls/js/main.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/public/subdom/darksouls/js/hiding-spots.js",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/public/subdom/darksouls/css/hiding-spots.css",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/public/subdom/darksouls/index.html",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/eldritch-horr.org/server/public/subdom/darksouls/css/main.css",
+		"/C/Users/matth/Documents/ECE_411/HW7/hw7.tex",
+		"/C/Users/matth/Documents/ECE_372a/test_sheet.tex",
+		"/C/Users/matth/Documents/ECE_330_scan/ECE-330-complete-course-notes.tex",
+		"/C/Users/matth/Documents/Python/NLP/perceptron/perceptron.py",
+		"/C/Users/matth/Documents/ECE_411/HW5/hw5.tex",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/.ssh/known_hosts",
+		"/C/Users/matth/Documents/ECE_413/hwtest_links.html",
+		"/C/Users/matth/Documents/ECE_411/HW6/hw6.tex",
+		"/C/Users/matth/Documents/ECE_330/HW2/hw2.tex",
+		"/C/Users/matth/Documents/ECE_330/HW5/hw5.tex",
+		"/C/Users/matth/Downloads/ECE-373-SSH.pem",
+		"/C/Users/matth/AppData/Roaming/SPB_16.6/.ssh/id_rsa",
+		"/C/Users/matth/workspace/University_Guenther/src/org/university/software/Course.java",
+		"/C/Users/matth/workspace/University_Guenther/src/org/university/hardware/Classroom.java",
+		"/C/Users/matth/workspace/University_Guenther/src/org/university/hardware/Department.java",
+		"/C/Users/matth/workspace/University_Guenther/src/org/university/software/University.java",
+		"/C/Users/matth/workspace/University_Guenther/src/org/university/people/Student.java",
+		"/C/Users/matth/workspace/University_Guenther/src/org/university/people/Staff.java",
+		"/C/Users/matth/workspace/University_Guenther/src/org/university/people/Professor.java",
+		"/C/Users/matth/workspace/University_Guenther/src/org/university/people/Employee.java",
+		"/C/Users/matth/workspace/University_Guenther/src/org/university/people/Person.java",
+		"/C/Users/matth/workspace/University_Guenther/.classpath",
+		"/C/Users/matth/workspace/University_Guenther/src/org/university/software/out2-test.txt",
+		"/C/Users/matth/workspace/University_Guenther/src/org/university/software/out1-test.txt",
+		"/C/Users/matth/Documents/Python/NLP/perceptron/dataTest",
+		"/C/Users/matth/Documents/ECE_411/HW3/hw3.tex",
+		"/C/Users/matth/Documents/ECE_411/HW2/hw2.tex",
+		"/C/Users/matth/Documents/ECE_411/HW1/hw1.tex",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw1/hw1p2.py",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw1/hw1p1.py",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw2/vocab",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw2/model",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw2/homework2_undergrad.tex",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw2/perceptron.py",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw2/vocab_tune_cutoff_4",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw2/model_tune_cutoff_4",
+		"/C/Users/matth/AppData/Local/Temp/Temp1_hw2_undergrad.zip/vocab_tune_cutoff_4",
+		"/C/Users/matth/AppData/Local/Temp/Temp1_hw2_undergrad.zip/model_tune_cutoff_4",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw2/output",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw2/smsspam/SMSSpamCollection.train",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw2/smsspam/SMSSpamCollection",
+		"/C/Users/matth/workspace/Lab2_Guenther/src/org/library/physobjects/Person.java",
+		"/C/Users/matth/workspace/Lab2_Guenther/src/org/library/physobjects/Employee.java",
+		"/C/Users/matth/workspace/Lab2_Guenther/src/org/library/physobjects/Professor.java",
+		"/C/Users/matth/workspace/Lab2_Guenther/src/org/library/physobjects/Book.java",
+		"/C/Program Files (x86)/VMware/VMware Workstation/vmware.exe.manifest",
+		"/C/Users/matth/Downloads/openmw-essimporter.1/openmw-essimporter.1",
+		"/C/Program Files (x86)/Steam/steamapps/common/Morrowind/mw_fps_opt.ini",
+		"/C/Program Files (x86)/Steam/steamapps/common/Morrowind/Morrowind.ini",
+		"/C/Users/matth/Documents/Resume/Resume_yy-mm-dd._DATE_FORMAT",
+		"/C/Users/matth/Documents/ENGR_498/breakout_assignment_4.md",
+		"/C/Users/matth/Downloads/CourseTest.java",
+		"/C/Users/matth/Documents/ECE_411/Newton-Cotes.tex",
+		"/C/Users/matth/Documents/ENGR_498/functional_requirements_individual.txt",
+		"/C/Users/matth/Documents/MATLAB/AME_205/hw11/hw11.tex",
+		"/C/Users/matth/Downloads/in-class-exercise.html",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw2/hw2p1.py",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw2/smsspam/readme",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw2/smsspam/SMSSpamCollection.devel",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw2/smsspam/SMSSpamCollection.test",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw2/smsspam/url.txt",
+		"/C/Users/matth/AppData/Local/Temp/Temp1_student1_hw1_good_solution.zip/student1_hw1_good_solution/asnmnt11.py",
+		"/C/Users/matth/workspace/Lab1_Guenther/src/edu/ece373/lab1/test/persontest.java",
+		"/C/Users/matth/workspace/Lab1_Guenther/src/edu/ece373/lab1/test/PersonTest.java",
+		"/C/Users/matth/Anaconda3/envs/nlp_hw1/conda-meta/history",
+		"/C/Users/matth/Documents/Python/NLP/nlp_hw1/hw1.py",
+		"/C/Users/matth/eclipse/java-mars/eclipse/eclipse.ini",
+		"/C/Users/matth/Documents/C++/dark-souls-board-game-dice-v2/dsbg-dice.h",
+		"/C/Users/matth/Documents/C++/dark-souls-board-game-dice-v2/dsbg-dice.cpp",
+		"/C/Users/matth/Documents/C++/dark-souls-board-game-dice/dsbg-dice.h",
+		"/C/Users/matth/Documents/C++/template-meta/meta-string.h",
+		"/C/Users/matth/Documents/C++/dark-souls-board-game-dice/dsbg-dice.cpp",
+		"/C/Users/matth/AppData/Roaming/Sublime Text 3/Packages/User/C++ Build System.sublime-build",
+		"/C/Users/matth/Documents/C++/dark-souls-board-game-dice/dsbg-dice",
+		"/C/Users/matth/Documents/CUDA/EndocriNet/nlp/Dictionary.cu",
+		"/C/Users/matth/Documents/CUDA/EndocriNet/nlp/Word.cu",
+		"/C/Users/matth/Documents/CUDA/EndocriNet/nlp/NLP.cu",
+		"/C/Users/matth/Documents/CUDA/EndocriNet/nlp/nlp-main.cu",
+		"/C/Users/matth/Documents/CUDA/EndocriNet/nlp/Dictionary.cuh",
+		"/C/Users/matth/Documents/CUDA/EndocriNet/nlp/Word.cuh",
+		"/C/Users/matth/Documents/CUDA/EndocriNet/nlp/NLP.cuh",
+		"/C/Users/matth/Documents/CUDA/EndocriNet/nlp/nlp-main.cuh",
+		"/C/Users/matth/Documents/CUDA/EndocriNet/nlp/nlp.cu",
+		"/C/Users/matth/Documents/CUDA/EndocriNet/nlp/nlp.cuh",
+		"/C/Users/matth/AppData/Roaming/Sublime Text 3/Packages/User/CustomTheme/Custom.tmTheme",
+		"/C/Users/matth/AppData/Local/Temp/7zOCFD18FFB/Monokai.tmTheme",
+		"/C/Users/matth/AppData/Roaming/Sublime Text 3/Packages/C++ Starting Kit/C.tmLanguage",
+		"/C/Users/matth/AppData/Roaming/Sublime Text 3/Packages/Monokai Extended/package-metadata.json"
+	],
+	"find":
+	{
+		"height": 56.0
+	},
+	"find_in_files":
+	{
+		"height": 251.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 56.0
+	},
+	"input":
+	{
+		"height": 89.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 611.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 483.0
+	},
+	"output.markdown":
+	{
+		"height": 240.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 240.0
+	},
+	"pinned_build_system": "",
+	"project": "ECE373_Team_Project_Team1.sublime-project",
+	"replace":
+	{
+		"height": 104.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 1000.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 760.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 473.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
