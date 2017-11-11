@@ -83,6 +83,8 @@ public class UserSelectionFrame extends JFrame {
 			super();
 			JButton submitButton = new JButton(action.buttonText);
 			JButton cancelButton = new JButton("Cancel");
+			add(submitButton);
+			add(cancelButton);
 		}
 	}
 	
