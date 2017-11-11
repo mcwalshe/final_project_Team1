@@ -52,7 +52,7 @@ public class TextHighlighter {
 		sc = StyleContext.getDefaultStyleContext();
 		doc = new DefaultStyledDocument();
 		baseStyle = sc.addStyle("Base Style", null);
-		baseStyle.addAttribute(StyleConstants.Size, (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/1080 * 12));
+		baseStyle.addAttribute(StyleConstants.Size, DPIScaling.scaleInt(12));
 		highlight = sc.addStyle("Highlight", null);
 		highlight.addAttribute(StyleConstants.Background, Color.blue);
 		highlight.addAttribute(StyleConstants.Foreground, Color.white);

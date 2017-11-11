@@ -43,8 +43,7 @@ public class Test_Driver {
 //			System.out.println(testDocStr);
 			JFrame testFrame = new JFrame("Highlight Test");
 			testFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			int scaleFactor = (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/1080);
-			testFrame.setSize(800*scaleFactor, 800*scaleFactor);
+			testFrame.setSize(DPIScaling.scaleInt(800), DPIScaling.scaleInt(800));
 			testFrame.setLayout(new BoxLayout(testFrame.getContentPane(), BoxLayout.Y_AXIS));
 			testFrame.add(new JScrollPane(testFormat.getTextPane()), null);
 			testFrame.setVisible(true);
