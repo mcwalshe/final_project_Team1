@@ -17,8 +17,13 @@ public class Document implements Serializable {
 		private int wordCount;
 		private String textBody;
 		private String currWord;
+		private short todaysTraining;
+		private short longestTraining;
+		private short currWPM;
+		private short todaysFastestWPM;
+		private short fastestWPM;
 		
-		//no arg constructor
+		//default no arg constructor
 		public Document() {
 			this.setTitle("");
 			this.setPath("");
@@ -27,30 +32,34 @@ public class Document implements Serializable {
 			this.setCurrWord("");
 		}
 		
-		//constructor with file path as argument?
-		//TODO: open file from path and use that to fill out the constructor
+		//constructor with file path as argument
 		public Document(String path) {
 			//first check for .txt extension, then open file
 			String checkTxt = path.substring(path.lastIndexOf('.'));
 			
 			if (checkTxt.compareTo(".txt") != 0) 
 			{
-				//we only use .txt files, so a document will not be created
+				//we only use .txt files, so a Document will not be created
 				System.out.println("Error: Invalid document type. Only text files are allowed.");
 			} 
+			//now open file, 
 			else 
 			{
-				//set title and path, init text body and word count
+				//set path, init text body and word count
+				this.setPath(path);
+				this.textBody = "";
+				this.wordCount = 0;
+				
+				//set title
 				int lastSlash = path.lastIndexOf('\\');
+				
 				if (lastSlash == -1) {
 					this.title = path.substring(0, path.lastIndexOf('.'));
 				} else {
 					this.title = path.substring(path.lastIndexOf('\\') + 1, path.lastIndexOf('.'));
 				}
-				this.setPath(path);
-				this.textBody = "";
-				this.wordCount = 0;
 				
+				//read actual text from file
 				File doc = new File(path);
 				Scanner docReader;
 				try {
@@ -74,6 +83,7 @@ public class Document implements Serializable {
 			}
 		}
 		
+		//moves to next word in text body
 		public void incrementWord() {
 			String[] words = this.textBody.split(" ");
 			for (int i = 0; i < words.length; i++) {
@@ -85,6 +95,7 @@ public class Document implements Serializable {
 		}
 		
 		//saves Document to serialized file
+		//TODO: create unique name for document based on user
 		public static void saveDocument(Document d) {
 			FileOutputStream fileOut = null;
 			ObjectOutputStream objOut= null;
@@ -169,6 +180,48 @@ public class Document implements Serializable {
 
 		public void setCurrWord(String currWord) {
 			this.currWord = currWord;
+		}
+		
+		public short getTodaysFastestWPM() {
+			return todaysFastestWPM;
+		}
+		
+		public void setTodaysFastestWPM(short val) {
+			if (val > todaysFastestWPM) {
+				todaysFastestWPM = val;
+			}
+		}
+
+		public short getTodaysTraining() {
+			return todaysTraining;
+		}
+
+		public void setTodaysTraining(short todaysTraining) {
+			this.todaysTraining = todaysTraining;
+		}
+
+		public short getLongestTraining() {
+			return longestTraining;
+		}
+
+		public void setLongestTraining(short longestTraining) {
+			this.longestTraining = longestTraining;
+		}
+
+		public short getCurrWPM() {
+			return currWPM;
+		}
+
+		public void setCurrWPM(short currWPM) {
+			this.currWPM = currWPM;
+		}
+
+		public short getFastestWPM() {
+			return fastestWPM;
+		}
+
+		public void setFastestWPM(short fastestWPM) {
+			this.fastestWPM = fastestWPM;
 		}
 }
 

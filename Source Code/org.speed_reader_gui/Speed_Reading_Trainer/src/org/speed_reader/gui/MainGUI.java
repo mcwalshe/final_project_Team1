@@ -5,11 +5,16 @@ import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.event.MouseInputAdapter;
+
+import com.sun.xml.internal.txw2.Document;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.geom.RoundRectangle2D;
 import static java.time.temporal.ChronoUnit.MINUTES;
+import org.speed_reader.data.*;
 
 public class MainGUI extends JFrame {
 	
@@ -294,7 +299,7 @@ public class MainGUI extends JFrame {
 			//Setup Listeners
 			openNewDocument.addActionListener((ActionEvent event) -> {
 				System.out.println("Open New Document (*.txt)");
-				//TBD
+				OpenNewFile f = new OpenNewFile(); //user input box for new document
 			});
 			saveCurrentPlace.addActionListener((ActionEvent event) -> {
 				System.out.println("Save Current Place");
@@ -533,6 +538,39 @@ public class MainGUI extends JFrame {
 			add(label, BorderLayout.WEST);
 			add(values, BorderLayout.EAST);
 		}
+	}
+	
+	private class OpenNewFile extends JFrame {
+		JLabel enterFileName;
+		JTextField fileName;
+		JPanel inputFrame;
+		JButton submitButton;
+		
+		public OpenNewFile() {
+			super("Open New Document");
+			setSize(250, 200);
+			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			
+			enterFileName = new JLabel("New Document(*.txt): ");
+			fileName = new JTextField();
+			submitButton = new JButton("OK");	
+			submitButton.addActionListener(new ButtonListener());
+			
+			inputFrame.add(enterFileName);
+			inputFrame.add(fileName);
+			inputFrame.add(submitButton);
+			add(inputFrame);
+			
+			setVisible(true);
+		}
+		
+		private class ButtonListener implements ActionListener {
+			public void actionPerformed(ActionEvent e) {
+				//TODO: add document to user and document list panel
+			}
+		}
+		
+		
 	}
 	
 }
