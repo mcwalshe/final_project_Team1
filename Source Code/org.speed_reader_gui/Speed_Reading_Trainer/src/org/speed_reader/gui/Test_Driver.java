@@ -51,15 +51,19 @@ public class Test_Driver {
 			testFormat.highlightFirstWord();
 			long msOld = System.currentTimeMillis();
 			long msNew;
-			for(int i = 0; i < 1067; i++){
-				msNew = System.currentTimeMillis();
+			while(true){
 				try {
-					Thread.sleep(120 - (int)(msNew - msOld)); // 500 WPM
-				} catch(InterruptedException e){
-					e.printStackTrace();
+					msNew = System.currentTimeMillis();
+					try {
+						Thread.sleep(120 - (int)(msNew - msOld)); // 500 WPM
+					} catch(InterruptedException e){
+						e.printStackTrace();
+					}
+					msOld = System.currentTimeMillis();
+					testFormat.highlightNextWord();
+				} catch(IndexOutOfBoundsException e){
+					break;
 				}
-				msOld = System.currentTimeMillis();
-				testFormat.highlightNextWord();
 			}
 		} catch(FileNotFoundException e){
 			System.out.println("Error: file not found.");

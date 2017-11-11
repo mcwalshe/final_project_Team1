@@ -69,7 +69,7 @@ public class TextHighlighter {
 		textPane.repaint();
 	}
 	
-	public void highlightWord(int newIdx){
+	public void highlightWord(int newIdx) throws IndexOutOfBoundsException {
 		moveHighlight(wordDelimiters.get(wordIdx), wordDelimiters.get(newIdx));
 		wordIdx = newIdx;
 	}
@@ -78,7 +78,7 @@ public class TextHighlighter {
 		highlightWord(0);
 	}
 	
-	public void highlightNextWord(){
+	public void highlightNextWord() throws IndexOutOfBoundsException {
 		highlightWord(wordIdx + 1);
 	}
 	
