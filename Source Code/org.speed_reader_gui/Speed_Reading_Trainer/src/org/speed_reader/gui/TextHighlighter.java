@@ -1,10 +1,6 @@
-/**
- * 
- */
 package org.speed_reader.gui;
 
 import java.awt.Color;
-import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,10 +12,6 @@ import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
 
-/**
- * @author Matthias Guenther
- *
- */
 public class TextHighlighter {
 	
 	private StyleContext sc;
