@@ -1,6 +1,5 @@
 package org.speed_reader.gui;
 
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,12 +8,11 @@ import javax.swing.JTextPane;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultStyledDocument;
 import javax.swing.text.Style;
-import javax.swing.text.StyleConstants;
-import javax.swing.text.StyleContext;
+
+import org.speed_reader.data.Pointer;
 
 public class TextHighlighter {
 	
-	private StyleContext sc;
 	private Style baseStyle;
 	private Style highlight;
 	private DefaultStyledDocument doc;
@@ -23,7 +21,7 @@ public class TextHighlighter {
 	private int[] docBounds;
 	private int wordIdx;
 	
-	public TextHighlighter(String docStr){
+	public TextHighlighter(String docStr, Pointer pointer){
 		docBounds = new int[2];
 		docBounds[0] = 0;
 		docBounds[1] = docStr.length();
@@ -41,13 +39,9 @@ public class TextHighlighter {
 		}
 		wordIdx = 0;
 		
-		sc = StyleContext.getDefaultStyleContext();
 		doc = new DefaultStyledDocument();
-		baseStyle = sc.addStyle("Base Style", null);
-		baseStyle.addAttribute(StyleConstants.Size, DPIScaling.scaleInt(12));
-		highlight = sc.addStyle("Highlight", null);
-		highlight.addAttribute(StyleConstants.Background, Color.blue);
-		highlight.addAttribute(StyleConstants.Foreground, Color.white);
+		baseStyle = pointer.getBaseStyle();
+		highlight = pointer.getHighlight();
 		try {
 			doc.insertString(0, docStr, baseStyle);
 		} catch(BadLocationException e){}
@@ -72,6 +66,30 @@ public class TextHighlighter {
 	
 	public void highlightNextWord() throws IndexOutOfBoundsException {
 		highlightWord(wordIdx + 1);
+	}
+	
+	public void startReading(int wpm){
+		int msPerWord = 60000 / wpm; // (60000 ms/min) / (wpm words/min) = 60000/wpm ms/word
+		if(msPerWord <= 0) throw new IllegalArgumentException();
+		highlightFirstWord();
+		long msOld = System.currentTimeMillis();
+		long msNew;
+		while(true){
+			try {
+				msNew = System.currentTimeMillis();
+				try {
+					Thread.sleep(msPerWord - (int)(msNew - msOld));
+				} catch(InterruptedException e){
+					e.printStackTrace();
+				} catch(IllegalArgumentException e){
+					// (msPerWord - (int)(msNew - msOld)) was negative. Don't sleep at all. 
+				}
+				msOld = System.currentTimeMillis();
+				highlightNextWord();
+			} catch(IndexOutOfBoundsException e){
+				break;
+			}
+		}
 	}
 	
 	public JTextPane getTextPane(){

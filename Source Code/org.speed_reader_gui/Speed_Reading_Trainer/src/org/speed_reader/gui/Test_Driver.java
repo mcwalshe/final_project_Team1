@@ -4,11 +4,11 @@ import javax.swing.BoxLayout; // TEMPORARY
 import javax.swing.JFrame; // TEMPORARY
 import javax.swing.JScrollPane; // TEMPORARY
 import java.util.Scanner; // TEMPORARY
-import java.awt.Toolkit; // TEMPORARY
 import java.io.File; // TEMPORARY
 import java.io.FileNotFoundException; // TEMPORARY
 
-import org.speed_reader.data.User;
+import org.speed_reader.data.Pointer; // TEMPORARY
+import org.speed_reader.data.User; // TEMPORARY
 
 public class Test_Driver {
 
@@ -39,7 +39,7 @@ public class Test_Driver {
 			Scanner testScanner = new Scanner(new File("src/org/speed_reader/gui/test2.txt"));
 			String testDocStr = testScanner.useDelimiter("\\Z").next();
 			testScanner.close();
-			TextHighlighter testFormat = new TextHighlighter(testDocStr);
+			TextHighlighter testFormat = new TextHighlighter(testDocStr, new Pointer());
 //			System.out.println(testDocStr);
 			JFrame testFrame = new JFrame("Highlight Test");
 			testFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,23 +47,7 @@ public class Test_Driver {
 			testFrame.setLayout(new BoxLayout(testFrame.getContentPane(), BoxLayout.Y_AXIS));
 			testFrame.add(new JScrollPane(testFormat.getTextPane()), null);
 			testFrame.setVisible(true);
-			testFormat.highlightFirstWord();
-			long msOld = System.currentTimeMillis();
-			long msNew;
-			while(true){
-				try {
-					msNew = System.currentTimeMillis();
-					try {
-						Thread.sleep(120 - (int)(msNew - msOld)); // 500 WPM
-					} catch(InterruptedException e){
-						e.printStackTrace();
-					}
-					msOld = System.currentTimeMillis();
-					testFormat.highlightNextWord();
-				} catch(IndexOutOfBoundsException e){
-					break;
-				}
-			}
+			testFormat.startReading(500);
 		} catch(FileNotFoundException e){
 			System.out.println("Error: file not found.");
 		}
