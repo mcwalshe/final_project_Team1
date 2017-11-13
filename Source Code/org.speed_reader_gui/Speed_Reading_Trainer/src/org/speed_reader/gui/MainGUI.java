@@ -20,6 +20,7 @@ import java.io.FileNotFoundException;
 
 import static java.time.temporal.ChronoUnit.MINUTES;
 import org.speed_reader.data.*;
+import org.speed_reader.gui.UserSelectionFrame.ActionType;
 
 public class MainGUI extends JFrame {
 	
@@ -358,11 +359,11 @@ public class MainGUI extends JFrame {
 			//User Event Listeners
 			selectExistingUser.addActionListener((ActionEvent event) -> {
 				System.out.println("Select Existing User Profile");
-				//TBD
+				UserSelectionFrame userSignIn = new UserSelectionFrame(ActionType.SIGN_IN);
 			});
 			createNewUser.addActionListener((ActionEvent event) -> {
 				System.out.println("Create New User");
-				//TBD
+				UserSelectionFrame userCreate = new UserSelectionFrame(ActionType.CREATE_NEW);
 			});
 			
 			userMenu.add(selectExistingUser);

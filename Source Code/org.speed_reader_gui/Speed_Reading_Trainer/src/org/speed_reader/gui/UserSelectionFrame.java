@@ -1,5 +1,8 @@
 package org.speed_reader.gui;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,10 +17,12 @@ public class UserSelectionFrame extends JFrame {
 	
 	public final ActionType action;
 	
-	// TEMPORARY testing method
+/*	// TEMPORARY testing method
 	public static void main(String[] args){
-		UserSelectionFrame login = new UserSelectionFrame();
-	}
+		UserSelectionFrame login = new UserSelectionFrame(ActionType.CREATE_NEW);
+//		UserSelectionFrame login = new UserSelectionFrame(ActionType.SIGN_IN);
+		login.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}*/
 	
 	public UserSelectionFrame(){
 		this(ActionType.CREATE_NEW);
@@ -34,7 +39,7 @@ public class UserSelectionFrame extends JFrame {
 		add(usernamePanel);
 		add(passwordPanel);
 		add(buttonPanel);
-		setSize(500, 250);
+		setSize(DPIScaling.scaleInt(250), DPIScaling.scaleInt(100));
 		setVisible(true);
 	}
 	
@@ -78,14 +83,35 @@ public class UserSelectionFrame extends JFrame {
 	private class ButtonPanel extends JPanel {
 		
 		private static final long serialVersionUID = 1L;
+		
+		private ActionType action;
+		private JButton submitButton;
+		private JButton cancelButton;
 
 		public ButtonPanel(ActionType action){
 			super();
-			JButton submitButton = new JButton(action.buttonText);
-			JButton cancelButton = new JButton("Cancel");
+			this.action = action;
+			submitButton = new JButton(action.buttonText);
+			cancelButton = new JButton("Cancel");
 			add(submitButton);
 			add(cancelButton);
+			submitButton.addActionListener(new ButtonListener());
+			cancelButton.addActionListener(new ButtonListener());
 		}
+		
+		private class ButtonListener implements ActionListener {
+			
+			public void actionPerformed(ActionEvent e){
+				if(e.getSource().equals(submitButton)){
+					System.out.println("\"" + action.buttonText + "\" button pressed.");
+				} else if(e.getSource().equals(cancelButton)){
+					System.out.println("\"Cancel\" button pressed.");
+					dispose();
+				}
+			}
+			
+		}
+		
 	}
 	
 }
