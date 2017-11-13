@@ -250,8 +250,8 @@ public class MainGUI extends JFrame {
 			setBackground(Color.WHITE);
 			setBorder(BorderFactory.createMatteBorder(2, 0, 0, 0, defaultBackgroundColor));
 			
-			JLabel southLabel = new JLabel("<html><p><font size=4>To <i>Decrease</i> or <i>Increase</i> Reading Speed, "+
-											"Press <font size=6>&lsaquo<font size=4> or <font size=6>&rsaquo<font size=4>.  "+
+			JLabel southLabel = new JLabel("<html><p><font size="+DPIScaling.scaleInt(4)+">To <i>Decrease</i> or <i>Increase</i> Reading Speed, "+
+											"Press <font size="+DPIScaling.scaleInt(6)+">&lsaquo<font size="+DPIScaling.scaleInt(4)+"> or <font size="+DPIScaling.scaleInt(6)+">&rsaquo<font size="+DPIScaling.scaleInt(4)+">.  "+
 											"Press Spacebar to <i>Pause</i>.</p></html>", SwingConstants.CENTER);
 			southLabel.setForeground(defaultTextColor);
 			southLabel.setMaximumSize(new Dimension(WINDOW_WIDTH-DPIScaling.scaleInt(400),(int)(WINDOW_HEIGHT*.1)));
@@ -457,6 +457,7 @@ public class MainGUI extends JFrame {
 			//Populate the docList
 			String[] docArray = documents.toArray(new String[0]);
 			docList = new JList<String>(docArray);
+			docList.setFont(new Font("Sans-Serif", Font.PLAIN, defaultFontSize));
 			
 			//Set Styling Elements for docList
 			docList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -530,7 +531,8 @@ public class MainGUI extends JFrame {
 										"Fastest WPM:         "+fastestWPM+"WPM</p></html>";
 			*/
 			
-			String labelContents="<html><p>Today's Training Time:  <br>"+
+			String labelContents="<html><p><font size="+DPIScaling.scaleInt(3)+">"+
+										"Today's Training Time:  <br>"+
 										"Longest Training Time:  <br>"+
 										"Current WPM:         <br>"+
 										"Fastest WPM Today:   <br>"+
@@ -540,7 +542,8 @@ public class MainGUI extends JFrame {
 			label.setForeground(defaultTextColor);
 			label.setHorizontalTextPosition(JLabel.LEFT);
 			
-			String valueContents="<html><p>"+currTrainingTimeMin+" m<br>"+
+			String valueContents="<html><p><font size="+DPIScaling.scaleInt(3)+">"+
+											currTrainingTimeMin+" m<br>"+
 											longestTrainingTimeMin+" m<br>"+
 											currWPM+" WPM<br>"+
 											fastestWPMToday+" WPM<br>"+
