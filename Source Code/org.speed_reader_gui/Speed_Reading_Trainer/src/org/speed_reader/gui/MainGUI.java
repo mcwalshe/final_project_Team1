@@ -2,6 +2,8 @@ package org.speed_reader.gui;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.event.MouseInputAdapter;
@@ -13,6 +15,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.geom.RoundRectangle2D;
+import java.io.File;
+import java.io.FileNotFoundException;
+
 import static java.time.temporal.ChronoUnit.MINUTES;
 import org.speed_reader.data.*;
 
@@ -20,16 +25,16 @@ public class MainGUI extends JFrame {
 	
 //Styling Global Vars
 /*------------------------------------------------------------------------------------------------------------------------------------*/	
-	int WINDOW_WIDTH = 1000; 
-	int WINDOW_HEIGHT = 900;
+	int WINDOW_WIDTH = DPIScaling.scaleInt(1000); 
+	int WINDOW_HEIGHT = DPIScaling.scaleInt(900);
 	Color defaultBackgroundColor = new Color(24,145,227);  	//rgb - light blue color
 	Color defaultTextColor = new Color(90,90,95);       	//rgb - gray
-	int defaultFontSize = 12;
-	int emphasisFontSize = 18;
+	int defaultFontSize = DPIScaling.scaleInt(12);
+	int emphasisFontSize = DPIScaling.scaleInt(18);
 /*------------------------------------------------------------------------------------------------------------------------------------*/	
 //Provides for dynamic font sizing of reading
 	
-	public int readingFontSize = 22;													//User definable font size for the reading
+	public int readingFontSize = DPIScaling.scaleInt(22);													//User definable font size for the reading
 	
 	//Empirical Reading Panel tuning parameters based on window_height -- until I find a better way.
 	public int numReadingRows = (int)(WINDOW_HEIGHT/18*(12/readingFontSize));			//Number of Rows in the Reading Pane (char tall)
@@ -56,7 +61,8 @@ public class MainGUI extends JFrame {
 		public JScrollPane listScroller; 			//scrollbar for the JList
 	
 	DocumentStatisticsPanel docStatsPanel;
-	JTextArea textArea;								//document display panel
+	JTextPane textPane;								//document display pane
+	TextHighlighter textHighlighter;					//document-highlighting object
 /*------------------------------------------------------------------------------------------------------------------------------------*/	
 				
 	
@@ -78,7 +84,7 @@ public class MainGUI extends JFrame {
 		setMinimumSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setUndecorated(true);
-		setShape(new RoundRectangle2D.Double(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, 10, 10));
+		setShape(new RoundRectangle2D.Double(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, DPIScaling.scaleInt(10), DPIScaling.scaleInt(10)));
 		getRootPane().setWindowDecorationStyle(JRootPane.FRAME);
 
 
@@ -126,6 +132,14 @@ public class MainGUI extends JFrame {
 	public void updateStats(){
 		docStatsPanel.revalidate();
 		docStatsPanel.repaint();
+	}
+	
+	public void startReading(){
+		textHighlighter.startReading();
+	}
+	
+	public void startReading(int wpm){
+		textHighlighter.startReading(wpm);
 	}
 	
 	public class DragListener extends MouseInputAdapter
@@ -176,21 +190,27 @@ public class MainGUI extends JFrame {
 			
 			add(wpmLabel, BorderLayout.NORTH);
 			
-				
-			textArea = new JTextArea(numReadingRows,numReadingCols);
-			JScrollPane textAreaScrollPane = new JScrollPane(textArea); 
-			textArea.setEditable(false);
-			textArea.setLineWrap(true);
-			textArea.setWrapStyleWord(true);   //wrap at end of word, not at character end.
-			textAreaScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+			try {
+				Scanner testScanner = new Scanner(new File("src/org/speed_reader/gui/test2.txt"));
+				String testDocStr = testScanner.useDelimiter("\\Z").next();
+				testScanner.close();
+				textHighlighter = new TextHighlighter(testDocStr, new Pointer());
+//				textHighlighter.startReading(500);
+			} catch(FileNotFoundException e){
+				System.out.println("Error: file not found.");
+			}
+			textPane = textHighlighter.getTextPane();
+			JScrollPane textScrollPane = new JScrollPane(textPane); 
+			textPane.setEditable(false);
+			textScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 			Border border = BorderFactory.createMatteBorder(0, 0, 0, 0, defaultBackgroundColor);
 			Border margin = new EmptyBorder(0,10,0,10);
-			textAreaScrollPane.setBorder(new CompoundBorder(border, margin));
+			textScrollPane.setBorder(new CompoundBorder(border, margin));
 			
 			
 			//populate the textArea
 			
-			//DEBUG ONLY:
+/*			//DEBUG ONLY:
 			String loremIpsumString = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam elementum at lacus blandit ultricies. Pellentesque interdum, ex et facilisis laoreet, eros risus hendrerit neque, a interdum metus erat nec odio. Curabitur ultricies at diam ac tempus. Donec venenatis erat vel ante efficitur fringilla. Proin ante tortor, euismod eu felis non, vulputate laoreet neque. Quisque eget tincidunt nisi. Morbi iaculis enim nec turpis imperdiet ultricies." + 
 					"Maecenas lobortis mollis finibus. Suspendisse fermentum elit at enim pretium mollis. Nunc non augue molestie, gravida turpis et, ultricies nibh. Duis erat ex, ornare et est a, dictum hendrerit sem. Duis fringilla diam ligula, at volutpat odio maximus eget. Aenean aliquam quam elementum ex vulputate, in tincidunt ante dapibus. Sed vestibulum ex vitae venenatis sodales. Cras fringilla eu orci quis sodales." + 
 					"\r\n\r\nCras convallis magna nec cursus tempor. Etiam purus felis, imperdiet at fermentum vel, eleifend vitae velit. Vestibulum vitae euismod ipsum. Quisque fermentum tortor purus, et sollicitudin quam sollicitudin eu. Aenean tincidunt eros eget orci vulputate, vel posuere felis finibus. Donec facilisis, erat auctor semper molestie, tellus lorem molestie massa, quis porta justo orci et orci. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum in magna tempor, efficitur enim id, porttitor magna.\r\n" + 
@@ -214,9 +234,9 @@ public class MainGUI extends JFrame {
 			
 			
 			textArea.append(loremIpsumString);
-			textArea.setFont(new Font("Times New Roman", Font.PLAIN, readingFontSize));
+			textArea.setFont(new Font("Times New Roman", Font.PLAIN, readingFontSize));*/
 			
-			add(textAreaScrollPane,BorderLayout.WEST);
+			add(textScrollPane,BorderLayout.WEST);
 		}
 		
 	}
@@ -233,7 +253,7 @@ public class MainGUI extends JFrame {
 											"Press <font size=6>&lsaquo<font size=4> or <font size=6>&rsaquo<font size=4>.  "+
 											"Press Spacebar to <i>Pause</i>.</p></html>", SwingConstants.CENTER);
 			southLabel.setForeground(defaultTextColor);
-			southLabel.setMaximumSize(new Dimension(WINDOW_WIDTH-400,(int)(WINDOW_HEIGHT*.1)));
+			southLabel.setMaximumSize(new Dimension(WINDOW_WIDTH-DPIScaling.scaleInt(400),(int)(WINDOW_HEIGHT*.1)));
 			add(southLabel);
 		}
 		
@@ -427,7 +447,7 @@ public class MainGUI extends JFrame {
 			
 			
 			//Set Styling Elements for titlebox
-			titleBox.setSize(width,50);
+			titleBox.setSize(width,DPIScaling.scaleInt(50));
 			titleBox.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, defaultBackgroundColor));
 			titleBox.setBackground(Color.white);
 			titleBox.setForeground(defaultTextColor);
@@ -449,8 +469,8 @@ public class MainGUI extends JFrame {
 			listScroller = new JScrollPane(docList);
 			
 			//listScroller Styling
-			listScroller.setPreferredSize(new Dimension(width, height-50));
-			listScroller.setMaximumSize(new Dimension(width, height-50));
+			listScroller.setPreferredSize(new Dimension(width, height-DPIScaling.scaleInt(50)));
+			listScroller.setMaximumSize(new Dimension(width, height-DPIScaling.scaleInt(50)));
 			listScroller.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
 			
@@ -491,8 +511,8 @@ public class MainGUI extends JFrame {
 			
 			//Panel Styling Elements
 			setLayout(new BorderLayout());
-			setPreferredSize(new Dimension(width, height-50));
-			setMaximumSize(new Dimension(width, height-50));
+			setPreferredSize(new Dimension(width, height-DPIScaling.scaleInt(50)));
+			setMaximumSize(new Dimension(width, height-DPIScaling.scaleInt(50)));
 			setBorder(BorderFactory.createMatteBorder(2, 2, 2, 2, defaultBackgroundColor));
 			setBackground(Color.white);
 

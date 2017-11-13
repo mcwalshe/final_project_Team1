@@ -11,7 +11,7 @@ import javax.swing.text.Style;
 
 import org.speed_reader.data.Pointer;
 
-public class TextHighlighter {
+public class TextHighlighter extends Thread {
 	
 	private Style baseStyle;
 	private Style highlight;
@@ -20,8 +20,10 @@ public class TextHighlighter {
 	private ArrayList<int[]> wordDelimiters;
 	private int[] docBounds;
 	private int wordIdx;
+	private int wpm;
 	
-	public TextHighlighter(String docStr, Pointer pointer){
+	public TextHighlighter(String docStr, Pointer pointer, int wpm){
+		this.wpm = wpm;
 		docBounds = new int[2];
 		docBounds[0] = 0;
 		docBounds[1] = docStr.length();
@@ -48,6 +50,10 @@ public class TextHighlighter {
 		textPane = new JTextPane(doc);
 	}
 	
+	public TextHighlighter(String docStr, Pointer pointer){
+		this(docStr, pointer, 300); // Default to 300 WPM.
+	}
+	
 	private void moveHighlight(int[] oldBounds, int[] newBounds){
 		doc.setCharacterAttributes(oldBounds[0], oldBounds[1], baseStyle, true);
 		doc.setCharacterAttributes(newBounds[0], newBounds[1], highlight, false);
@@ -68,7 +74,8 @@ public class TextHighlighter {
 		highlightWord(wordIdx + 1);
 	}
 	
-	public void startReading(int wpm){
+	@Override
+	public void run(){
 		int msPerWord = 60000 / wpm; // (60000 ms/min) / (wpm words/min) = 60000/wpm ms/word
 		if(msPerWord <= 0) throw new IllegalArgumentException();
 		highlightFirstWord();
@@ -78,7 +85,7 @@ public class TextHighlighter {
 			try {
 				msNew = System.currentTimeMillis();
 				try {
-					Thread.sleep(msPerWord - (int)(msNew - msOld));
+					sleep(msPerWord - (int)(msNew - msOld));
 				} catch(InterruptedException e){
 					e.printStackTrace();
 				} catch(IllegalArgumentException e){
@@ -92,8 +99,25 @@ public class TextHighlighter {
 		}
 	}
 	
+	public void startReading(){
+		start();
+	}
+	
+	public void startReading(int wpm){
+		this.wpm = wpm;
+		startReading();
+	}
+	
 	public JTextPane getTextPane(){
 		return textPane;
+	}
+	
+	public void setWPM(int wpm){
+		this.wpm = wpm;
+	}
+	
+	public int getWPM(){
+		return wpm;
 	}
 
 }

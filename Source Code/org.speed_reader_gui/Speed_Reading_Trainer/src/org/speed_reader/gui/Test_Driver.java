@@ -21,21 +21,22 @@ public class Test_Driver {
 		System.out.println("\tOutput: " + User.hashString(hashTestStr));
 		
 		// Instantiate GUI
-/*		MainGUI newGUI;
-		newGUI = new MainGUI();*/
+		MainGUI newGUI;
+		newGUI = new MainGUI();
+		newGUI.startReading(500);
 		
 		// Test repainting
-/*		for(int i = 0; i < 10; i++){
+		for(int i = 0; i < 10; i++){
 			try {
 				Thread.sleep(2000);
 			} catch(InterruptedException e){
 				e.printStackTrace();
 			}
 			newGUI.updateDocList();
-		}*/
+		}
 		
 		// Test highlighting
-		try {
+		/*try {
 			Scanner testScanner = new Scanner(new File("src/org/speed_reader/gui/test2.txt"));
 			String testDocStr = testScanner.useDelimiter("\\Z").next();
 			testScanner.close();
@@ -50,9 +51,7 @@ public class Test_Driver {
 			testFormat.startReading(500);
 		} catch(FileNotFoundException e){
 			System.out.println("Error: file not found.");
-		}
+		}*/
 	}
-	
-	// Testing an efficient string operation to move the selection without reallocating the string.
 	
 }
