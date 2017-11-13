@@ -179,11 +179,11 @@ public class MainGUI extends JFrame {
 			setBackground(defaultBackgroundColor);
 			//setBorder(BorderFactory.createMatteBorder(0, 0, 4, 0, defaultBackgroundColor));
 			
-			JLabel wpmLabel = new JLabel("<html><p><font color=#5A5A5F size=5>Current Word Speed: " +"<font color=green>"+currWPM+"<font color=#5A5A5F> WPM</p></html>");
+			JLabel wpmLabel = new JLabel("<html><p><font color=#5A5A5F size="+DPIScaling.scaleInt(5)+">Current Word Speed: " +"<font color=green>"+currWPM+"<font color=#5A5A5F> WPM</p></html>");
 			wpmLabel.setForeground(defaultTextColor);
 			wpmLabel.setBackground(Color.WHITE);
 			wpmLabel.setOpaque(true);				//otherwise background goes unpainted
-			wpmLabel.setMaximumSize(new Dimension(100,(int)(height*.1)));
+			wpmLabel.setMaximumSize(new Dimension(DPIScaling.scaleInt(100),(int)(height*.1)));
 			wpmLabel.setHorizontalAlignment(SwingConstants.CENTER);
 			wpmLabel.setVerticalAlignment(SwingConstants.CENTER);
 			wpmLabel.setBorder(BorderFactory.createMatteBorder(4, 400, 4, 400, defaultBackgroundColor));
@@ -200,7 +200,8 @@ public class MainGUI extends JFrame {
 				System.out.println("Error: file not found.");
 			}
 			textPane = textHighlighter.getTextPane();
-			JScrollPane textScrollPane = new JScrollPane(textPane); 
+			textPane.setPreferredSize(new Dimension(width, height));
+			JScrollPane textScrollPane = new JScrollPane(textPane);
 			textPane.setEditable(false);
 			textScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 			Border border = BorderFactory.createMatteBorder(0, 0, 0, 0, defaultBackgroundColor);
