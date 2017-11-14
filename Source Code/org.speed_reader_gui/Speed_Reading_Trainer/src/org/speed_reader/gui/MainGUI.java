@@ -43,6 +43,8 @@ public class MainGUI extends JFrame {
 /*------------------------------------------------------------------------------------------------------------------------------------*/	
 //User & Document variables
 	public String userName = "Maria";
+	public User currUser;
+	public Document currDoc;
 	public LocalDateTime startTime = LocalDateTime.now(); // current time
 	public int currWPM = 30;
 	public int fastestWPMToday;
@@ -573,11 +575,12 @@ public class MainGUI extends JFrame {
 		
 		public OpenNewFile() {
 			super("Open New Document");
-			setSize(250, 200);
+			setSize(300, 200);
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			
 			enterFileName = new JLabel("New Document(*.txt): ");
-			fileName = new JTextField();
+			fileName = new JTextField(25);
+			inputFrame = new JPanel();
 			submitButton = new JButton("OK");	
 			submitButton.addActionListener(new ButtonListener());
 			
@@ -591,7 +594,9 @@ public class MainGUI extends JFrame {
 		
 		private class ButtonListener implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
-				//TODO: add document to user and document list panel
+				//TODO: add document to user's doc list
+				documents.add(fileName.getText());
+				dispose();
 			}
 		}
 		
