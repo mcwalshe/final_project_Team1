@@ -112,7 +112,7 @@ public class User implements Serializable {
 	}
 	
 	public boolean checkPassword(String password){
-		if(hashString(password) == passwordHash){
+		if(hashString(password).equals(passwordHash)){
 			return true;
 		} else {
 			return false;
