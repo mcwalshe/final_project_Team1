@@ -12,6 +12,8 @@ import java.util.Scanner;
 
 
 public class Document implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 		private String title;
 		private String fileLoc;
 		private int wordCount;
